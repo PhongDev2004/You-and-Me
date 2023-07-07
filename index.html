@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Beautiful</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- Animate.css library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <section>
+        <div class="leaves">
+            <div class="set">
+                <div><img src="./img/leaf_01.png" alt="1"></div>
+                <div><img src="./img/leaf_02.png" alt="2"></div>
+                <div><img src="./img/leaf_03.png" alt="3"></div>
+                <div><img src="./img/leaf_04.png" alt="4"></div>
+                <div><img src="./img/leaf_01.png" alt="1"></div>
+                <div><img src="./img/leaf_02.png" alt="2"></div>
+                <div><img src="./img/leaf_03.png" alt="3"></div>
+                <div><img src="./img/leaf_04.png" alt="4"></div>
+            </div>
+        </div>
+        <img class="bg" src="./img/bg.jpg" alt="bg">
+        <img class="girl" src="./img/girl.png" alt="bg">
+        <div class="login">
+            <h2>Sign in</h2>
+            <form>
+                <div class="inputBox">
+                    <input type="text" placeholder="Username">
+                </div>
+                <div class="inputBox">
+                    <input type="password" placeholder="Password">
+                </div>
+                <div class="inputBox">
+                    <input type="submit" value="login" id="btn">
+                </div>
+                <div class="group">
+                    <a href="#">Forget Password</a>
+                    <a href="3">Sign up</a>
+                </div>
+            </form>
+        </div>
+        <img class="strees" src="./img/trees.png" alt="strees">
+    </section>
+    <script>
+        $(document).ready(function () {
+            $('form').submit(function (event) {
+                event.preventDefault();
+                var username = $('input[type="text"]').val();
+                var password = $('input[type="password"]').val();
+                if (username === 'admin' && password === '123456') {
+                    $('.login').addClass('animate__animated animate__fadeOutUp');
+                    $('.login').one('animationend', function () {
+                        $('.login').css('display', 'none');
+                        $('section').append('<div class="fireworks animate__animated animate__zoomIn" style="text-align:center;"><h3 style="color: green; font-size: 52px;" class="animate__heartBeat">Bạn ăn cơm chưa?</h3><div class="pyro"><div class="before"></div><div class="after"></div></div></div>');
+                    });
+                } else {
+                    alert('Thông tin đăng nhập không chính xác!');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
