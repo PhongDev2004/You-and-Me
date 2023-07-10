@@ -55,11 +55,11 @@
                 event.preventDefault();
                 var username = $('input[type="text"]').val();
                 var password = $('input[type="password"]').val();
-                if (username === 'admin' && password === 'youandme') {
+                if (username === 'admin' && password === 'kimthu') {
                     $('.login').addClass('animate__animated animate__fadeOutUp');
                     $('.login').one('animationend', function () {
                         $('.login').css('display', 'none');
-                        $('section').append('<div class="fireworks animate__animated animate__zoomIn" style="text-align:center;"><h3 style="color: green; font-size: 52px;" class="animate__heartBeat">Bạn ăn cơm chưa?</h3><div class="pyro"><div class="before"></div><div class="after"></div></div></div>');
+                        $('section').append('<div class="fireworks animate__animated animate__zoomIn" style="text-align:center;"><h3 style="color: green; font-size: 52px;" class="animate__heartBeat">💘 Tớ thích cậu 💘</h3><div class="pyro"><div class="before"></div><div class="after"></div></div></div>');
                     });
                 } else {
                     alert('Thông tin đăng nhập không chính xác!');
